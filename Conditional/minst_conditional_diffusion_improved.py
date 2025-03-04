@@ -44,7 +44,8 @@ class ConditionalDenoiser(nn.Module):
         return decoded
 
 # Initialize model, optimizer, loss function, and scheduler
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
+print(f"Current using device：{device}")
 model = ConditionalDenoiser().to(device)
 # Lowered learning rate to stabilize training
 optimizer = optim.Adam(model.parameters(), lr=1e-4)
