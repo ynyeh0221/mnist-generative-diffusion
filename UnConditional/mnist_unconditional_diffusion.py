@@ -37,7 +37,8 @@ class ImprovedDenoiser(nn.Module):
         return decoded
 
 # Initialize model, optimizer, and loss function
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
+print(f"Current using device：{device}")
 model = ImprovedDenoiser().to(device)
 optimizer = optim.Adam(model.parameters(), lr=1e-3)
 criterion = nn.MSELoss()
