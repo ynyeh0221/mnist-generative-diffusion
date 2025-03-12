@@ -96,3 +96,5 @@ The script automatically detects and uses:
 - Apply to more complex datasets
 - Implement unconditional generation
 - Add more advanced sampling techniques
+
+![](https://github.com/ynyeh0221/mnist-generative-diffusion/blob/main/Conditional/Transformer/output/myplot.png)
